@@ -1,16 +1,13 @@
-.background{
+.background {
   position: absolute;
-  top:0;
-  left:0;
-  right: 0; 
-  bottom: 0; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: cadetblue;
 }
 
-
-
-
-.timeline{
+.timeline {
   position: relative;
   margin: 0 auto;
   padding: 1%;
@@ -18,8 +15,8 @@
   max-width: 1400px;
 }
 
-.timeline::after{
-  content: '';
+.timeline::after {
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -28,7 +25,7 @@
   width: 1%;
 }
 
-.timelineContainer{
+.timelineContainer {
   background-color: white;
   width: 42%;
   position: relative;
@@ -38,7 +35,7 @@
   display: block;
 }
 
-.timelineContainer::after{
+.timelineContainer::after {
   position: absolute;
   width: 16px;
   height: 16px;
@@ -46,12 +43,12 @@
   z-index: 8;
   top: 50%;
   left: 102%;
-  content: '';
+  content: "";
   border-radius: 50%;
   border: 2px solid white;
 }
 
-.timelineContainer::before{
+.timelineContainer::before {
   position: absolute;
   width: 16px;
   height: 16px;
@@ -60,15 +57,14 @@
   left: 107%;
 }
 
-
-.left{
+.left {
   left: 6%;
 }
 
-.right{
-  left: 52%
+.right {
+  left: 52%;
 }
 
-.right::after{
+.right::after {
   left: -5%;
 }
