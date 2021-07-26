@@ -19,7 +19,7 @@ function TimelineContainer(props){
                 <h2>{props.headline}</h2>
                 <div style={props.tag.includes('algorithms')? {width: '10%', marginTop: '2%'} : {display:'none'}}>
             
-                <IconButton aria-label="delete" >
+                <IconButton aria-label="delete" color='inherit'>
                     <AccountTreeIcon />
                 </IconButton>       
                 </div>   
