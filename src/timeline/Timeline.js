@@ -11,7 +11,7 @@ function Timeline() {
       headline: "Barnes-Hut Algorithm",
       content:
         "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the Barnes-Hut Algorithm",
-      tag: ["algorithms", "coding"],
+      tag: ["coding"],
     },
     {
       left: false,
@@ -24,7 +24,19 @@ function Timeline() {
     },
   ];
 
-  const [selectedTags, setSelectedTags] = useState(["algorithms"]);
+  const [selectedTags, setSelectedTags] = useState(["algorithms", "coding"]);
+
+  const toggleTag = (currentTag) => {
+    if (selectedTags.includes(currentTag)) {
+      let copy = selectedTags.filter((element) => {
+        return element != currentTag;
+      });
+      setSelectedTags([...copy]);
+    } else {
+      selectedTags.push(currentTag);
+      setSelectedTags([...selectedTags]);
+    }
+  };
 
   return (
     <React.Fragment>
@@ -49,6 +61,7 @@ function Timeline() {
                 content={timeEntry.content}
                 link={timeEntry.link}
                 linkName={timeEntry.linkName}
+                toggleTag={toggleTag}
               ></TimelineContainer>
             );
           }
