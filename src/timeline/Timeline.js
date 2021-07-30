@@ -42,24 +42,18 @@ function Timeline() {
 
   return (
     <React.Fragment>
-      <div
-        style={{
-          position: "absolute",
-          top: "2%",
-          left: "2%",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <h2 style={{ color: "white" }}>
-          Currently chosen Tags: {selectedTags.toString()}
-        </h2>
+      <div className="tagLegend">
+        <h2>Tags: </h2>
         {selectedTags.includes("algorithms") && (
-          <IconButton aria-label="delete" color="inherit">
+          <IconButton aria-label="delete" style={{ color: "white" }}>
             <AccountTreeIcon />
           </IconButton>
         )}
-        {selectedTags.includes("coding") && <CodeIcon />}
+        {selectedTags.includes("coding") && (
+          <IconButton aria-label="delete" style={{ color: "white" }}>
+            <CodeIcon />
+          </IconButton>
+        )}
       </div>
       <div className="timeline">
         <div></div>

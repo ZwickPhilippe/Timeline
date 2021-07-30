@@ -60,6 +60,24 @@ function App() {
           </Suspense>
         </Canvas>
       </div>
+      <div
+        style={{
+          position: "relative",
+          margin: "0 auto",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          color: "white",
+        }}
+      >
+        <h1 style={{ color: "white" }}>
+          My Journey as Developer: Philippe Zwick{" "}
+        </h1>
+        <p style={{ marginTop: "-1%" }}>
+          Press Tags to show/hide Timeline-Steps{" "}
+        </p>
+      </div>
       <Timeline></Timeline>
     </React.Fragment>
   );
