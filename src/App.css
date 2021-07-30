@@ -26,6 +26,35 @@
   position: relative;
 }
 
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.spaceField1 {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(1, 1, 7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.spaceField2 {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(1, 1, 7);
+  position: absolute;
+  top: 100%;
+  bottom: 0;
+}
+
 .timeline {
   position: relative;
   margin: 0 auto;

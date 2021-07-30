@@ -4,7 +4,8 @@ import { TextureLoader } from "three";
 import EarthDayMap from "./assets/8k_earth_daymap.jpg";
 import NormalMap from "./assets/8k_earth_normal_map.jpg";
 import CloudMap from "./assets/8k_earth_clouds.jpg";
-import { OrbitControls, Stars } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
+import MoonMap from "./assets/8k_moon.jpg";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
@@ -27,16 +28,8 @@ export function Earth(props) {
   return (
     <>
       {/* <ambientLight intensity={1} /> */}
-      <pointLight color="white" position={[30, 20, 5]} intensity={1.2} />
-      <Stars
-        count={20000}
-        radius={300}
-        depth={60}
-        saturation={0}
-        fade={true}
-        factor={7}
-      />
-      <mesh ref={cloudsRef} position={[0, 0, 3]}>
+
+      <mesh ref={cloudsRef}>
         <sphereGeometry args={[1.006, 32, 32]} />
         <meshPhongMaterial
           map={cloudMap}
@@ -46,8 +39,9 @@ export function Earth(props) {
           side={THREE.DoubleSide}
         />
       </mesh>
-      <mesh ref={earthRef} position={[0, 0, 3]}>
-        <sphereGeometry args={[1, 32, 32]} />
+
+      <mesh ref={earthRef}>
+        <sphereGeometry args={[1, 64, 64]} />
         <meshPhongMaterial color="red"></meshPhongMaterial>
         <meshStandardMaterial
           map={colorMap}
@@ -55,7 +49,8 @@ export function Earth(props) {
           metalness={0.4}
           roughness={0.7}
         />
-        {/* <OrbitControls
+
+        <OrbitControls
           enableZoom={true}
           enablePan={true}
           enableRotate={true}
@@ -72,7 +67,7 @@ export function Earth(props) {
           moving
           panSpeed={0.1}
           rotateSpeed={10}
-        /> */}
+        />
       </mesh>
     </>
   );

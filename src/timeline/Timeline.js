@@ -3,6 +3,8 @@ import "../App.css";
 import TimelineContainer from "./TimelineContainer";
 import CodeIcon from "@material-ui/icons/Code";
 import { useState } from "react";
+import AccountTreeIcon from "@material-ui/icons/AccountTree";
+import { IconButton } from "@material-ui/core";
 
 function Timeline() {
   const timeEntries = [
@@ -28,10 +30,27 @@ function Timeline() {
 
   return (
     <React.Fragment>
-      {/* <div >
-            <h2> Currently chosen Tags: {selectedTags.toString()}</h2>
-        </div> */}
+      <div
+        style={{
+          position: "absolute",
+          top: "2%",
+          left: "2%",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <h2 style={{ color: "white" }}>
+          Currently chosen Tags: {selectedTags.toString()}
+        </h2>
+        {selectedTags.includes("algorithms") && (
+          <IconButton aria-label="delete" color="inherit">
+            <AccountTreeIcon />
+          </IconButton>
+        )}
+        {selectedTags.includes("coding") && <CodeIcon />}
+      </div>
       <div className="timeline">
+        <div></div>
         {timeEntries.map((timeEntry, index) => {
           let includes = false;
           timeEntry.tag.forEach((tag) => {
