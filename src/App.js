@@ -7,6 +7,10 @@ import { Earth } from "./Earth";
 import { Stars } from "@react-three/drei";
 
 import { TopSection } from "./topSection";
+import { Moon } from "./Moon";
+import { Venus } from "./Venus";
+import { Saturn } from "./Saturn";
+import { Mars } from "./Mars";
 
 function App() {
   return (
@@ -36,6 +40,7 @@ function App() {
               factor={7}
             />
             <Earth />
+            <Moon />
           </Suspense>
         </Canvas>
       </div>
@@ -56,7 +61,8 @@ function App() {
               fade={true}
               factor={7}
             />
-            <Earth />
+            <Venus />
+            <Mars />
           </Suspense>
         </Canvas>
       </div>

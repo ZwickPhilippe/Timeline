@@ -3,18 +3,17 @@ import React, { useRef } from "react";
 import { TextureLoader } from "three";
 import EarthDayMap from "./assets/8k_earth_daymap.jpg";
 import NormalMap from "./assets/8k_earth_normal_map.jpg";
+import EarthNightMap from "./assets/8k_earth_nightmap.jpg";
 import CloudMap from "./assets/8k_earth_clouds.jpg";
 import { OrbitControls } from "@react-three/drei";
-import MoonMap from "./assets/8k_moon.jpg";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 
 export function Earth(props) {
-  const [colorMap, cloudMap, normalMap] = useLoader(TextureLoader, [
-    EarthDayMap,
-    CloudMap,
-    NormalMap,
-  ]);
+  const [colorMap, cloudMap, normalMap, earthNightMap] = useLoader(
+    TextureLoader,
+    [EarthDayMap, CloudMap, NormalMap, EarthNightMap]
+  );
 
   const earthRef = useRef();
   const cloudsRef = useRef();

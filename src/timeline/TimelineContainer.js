@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import { IconButton } from "@material-ui/core";
+import { IconButton, Tooltip } from "@material-ui/core";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import CodeIcon from "@material-ui/icons/Code";
 function TimelineContainer(props) {
@@ -26,12 +26,14 @@ function TimelineContainer(props) {
                 : { display: "none" }
             }
           >
-            <IconButton
-              color="inherit"
-              onClick={() => props.toggleTag("algorithms")}
-            >
-              <AccountTreeIcon />
-            </IconButton>
+            <Tooltip title="Algorithm">
+              <IconButton
+                color="inherit"
+                onClick={() => props.toggleTag("algorithms")}
+              >
+                <AccountTreeIcon />
+              </IconButton>
+            </Tooltip>
           </div>
           <div
             style={
@@ -40,15 +42,17 @@ function TimelineContainer(props) {
                 : { display: "none" }
             }
           >
-            <IconButton
-              color="inherit"
-              onClick={() => props.toggleTag("coding")}
-            >
-              <CodeIcon />
-            </IconButton>
+            <Tooltip title="Coding">
+              <IconButton
+                color="inherit"
+                onClick={() => props.toggleTag("coding")}
+              >
+                <CodeIcon />
+              </IconButton>
+            </Tooltip>
           </div>
         </div>
-        <p>
+        <p style={{ marginTop: "-1%" }}>
           {props.content}{" "}
           <a href={props.link} style={{ textDecoration: "none" }}>
             {props.linkName}

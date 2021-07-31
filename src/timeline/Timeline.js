@@ -2,21 +2,21 @@ import React from "react";
 import "../App.css";
 import TimelineContainer from "./TimelineContainer";
 import CodeIcon from "@material-ui/icons/Code";
+import WorkIcon from "@material-ui/icons/Work";
 import { useState } from "react";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import { IconButton } from "@material-ui/core";
+import DeveloperBoardIcon from "@material-ui/icons/DeveloperBoard";
+import { IconButton, Tooltip } from "@material-ui/core";
 
 function Timeline() {
   const timeEntries = [
     {
-      left: true,
       headline: "Barnes-Hut Algorithm",
       content:
         "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the Barnes-Hut Algorithm",
       tag: ["coding"],
     },
     {
-      left: false,
       headline: "Sorting Algorithms (+Visualizer)",
       content:
         "In algorithmics I learned about the simple and the more complex (but therefore faster) sorting algorithms. I decided to create a visualizer, that can be viewed here: ",
@@ -24,9 +24,50 @@ function Timeline() {
       linkName: "Sorting-Visualizer",
       tag: ["algorithms"],
     },
+    {
+      headline: "Barnes-Hut Algorithm",
+      content:
+        "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the Barnes-Hut Algorithm",
+      tag: ["coding"],
+    },
+    {
+      headline: "Sorting Algorithms (+Visualizer)",
+      content:
+        "In algorithmics I learned about the simple and the more complex (but therefore faster) sorting algorithms. I decided to create a visualizer, that can be viewed here: ",
+      link: "https://github.com/ZwickPhilippe/Sorting-Visualizer",
+      linkName: "Sorting-Visualizer",
+      tag: ["algorithms"],
+    },
+    {
+      headline: "Barnes-Hut Algorithm",
+      content:
+        "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the Barnes-Hut Algorithm",
+      tag: ["coding"],
+    },
+    {
+      headline: "Sorting Algorithms (+Visualizer)",
+      content:
+        "In algorithmics I learned about the simple and the more complex (but therefore faster) sorting algorithms. I decided to create a visualizer, that can be viewed here: ",
+      link: "https://github.com/ZwickPhilippe/Sorting-Visualizer",
+      linkName: "Sorting-Visualizer",
+      tag: ["algorithms"],
+    },
+    {
+      headline: "Barnes-Hut Algorithm",
+      content:
+        "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the Barnes-Hut Algorithm",
+      tag: ["coding"],
+    },
+    {
+      headline: "Barnes-Hut Algorithm",
+      content:
+        "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the Barnes-Hut Algorithm",
+      tag: ["coding"],
+    },
   ];
 
   const [selectedTags, setSelectedTags] = useState(["algorithms", "coding"]);
+  let left = false;
 
   const toggleTag = (currentTag) => {
     if (selectedTags.includes(currentTag)) {
@@ -44,16 +85,55 @@ function Timeline() {
     <React.Fragment>
       <div className="tagLegend">
         <h2>Tags: </h2>
-        {selectedTags.includes("algorithms") && (
-          <IconButton aria-label="delete" style={{ color: "white" }}>
+        <Tooltip title="Algorithm">
+          <IconButton
+            style={
+              selectedTags.includes("algorithms")
+                ? { color: "#93d13e" }
+                : { color: "white" }
+            }
+            onClick={() => toggleTag("algorithms")}
+          >
             <AccountTreeIcon />
           </IconButton>
-        )}
-        {selectedTags.includes("coding") && (
-          <IconButton aria-label="delete" style={{ color: "white" }}>
+        </Tooltip>
+
+        <Tooltip title="Coding">
+          <IconButton
+            style={
+              selectedTags.includes("coding")
+                ? { color: "#93d13e" }
+                : { color: "white" }
+            }
+            onClick={() => toggleTag("coding")}
+          >
             <CodeIcon />
           </IconButton>
-        )}
+        </Tooltip>
+        <Tooltip title="Projects">
+          <IconButton
+            style={
+              selectedTags.includes("projects")
+                ? { color: "#93d13e" }
+                : { color: "white" }
+            }
+            onClick={() => toggleTag("projects")}
+          >
+            <DeveloperBoardIcon />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Work">
+          <IconButton
+            style={
+              selectedTags.includes("work")
+                ? { color: "#93d13e" }
+                : { color: "white" }
+            }
+            onClick={() => toggleTag("work")}
+          >
+            <WorkIcon />
+          </IconButton>
+        </Tooltip>
       </div>
       <div className="timeline">
         <div></div>
@@ -65,10 +145,11 @@ function Timeline() {
             }
           });
           if (includes) {
+            left = !left;
             return (
               <TimelineContainer
                 key={index}
-                left={timeEntry.left}
+                left={left}
                 headline={timeEntry.headline}
                 tag={timeEntry.tag}
                 content={timeEntry.content}
