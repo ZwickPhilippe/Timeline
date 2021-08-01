@@ -8,20 +8,19 @@ import WorkIcon from "@material-ui/icons/Work";
 import BeeLogo from "../assets/beelogo.png";
 
 function TimelineContainer(props) {
-  const [isVisible, setVisible] = useState(true);
-  const containerRef = useRef();
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => setVisible(entry.isIntersecting));
-    });
-    observer.observe(containerRef.current);
-    return () => observer.unobserve(containerRef.current);
-  });
+  // const [isVisible, setVisible] = useState(true);
+  // const containerRef = useRef();
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => setVisible(entry.isIntersecting));
+  //   });
+  //   observer.observe(containerRef.current);
+  //   return () => observer.unobserve(containerRef.current);
+  // });
 
   const printProp = () => {
     console.log(props.left);
     console.log(props.link);
-    console.log(isVisible);
   };
 
   const toggleTag = (tag) => {
@@ -31,13 +30,7 @@ function TimelineContainer(props) {
 
   return (
     <React.Fragment>
-      <div
-        className={
-          `timelineContainer ${isVisible ? "visible" : ""}` +
-          (props.left ? " left" : " right")
-        }
-        ref={containerRef}
-      >
+      <div className={"timelineContainer " + (props.left ? " left" : " right")}>
         <div style={{ display: "flex", flexDirection: "row" }}>
           <h2>{props.headline}</h2>
           <div
