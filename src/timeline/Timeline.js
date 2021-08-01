@@ -25,18 +25,12 @@ function Timeline() {
       tag: ["algorithms"],
     },
     {
-      headline: "Barnes-Hut Algorithm",
+      headline: "Wir sind Biene Website",
       content:
-        "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the Barnes-Hut Algorithm",
-      tag: ["coding"],
-    },
-    {
-      headline: "Sorting Algorithms (+Visualizer)",
-      content:
-        "In algorithmics I learned about the simple and the more complex (but therefore faster) sorting algorithms. I decided to create a visualizer, that can be viewed here: ",
-      link: "https://github.com/ZwickPhilippe/Sorting-Visualizer",
-      linkName: "Sorting-Visualizer",
-      tag: ["algorithms"],
+        "For the 'Wir sind Biene' (='We are bees') bee-project in my high school, I created a website using HTML, CSS and Bootstrap. The website can be viewed here:",
+      tag: ["projects"],
+      link: "http://www.wirsindbiene.eu/index.html",
+      linkName: "Wir sind Biene!",
     },
     {
       headline: "Barnes-Hut Algorithm",
@@ -53,20 +47,51 @@ function Timeline() {
       tag: ["algorithms"],
     },
     {
-      headline: "Barnes-Hut Algorithm",
+      headline: "Wir sind Biene Website",
       content:
-        "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the Barnes-Hut Algorithm",
-      tag: ["coding"],
+        "For the 'Wir sind Biene' (='We are bees') bee-project in my high school, I created a website using HTML, CSS and Bootstrap. The website can be viewed here:",
+      tag: ["projects"],
+      link: "http://www.wirsindbiene.eu/index.html",
+      linkName: "Wir sind Biene!",
+    },
+    {
+      headline: "Wir sind Biene Website",
+      content:
+        "For the 'Wir sind Biene' (='We are bees') bee-project in my high school, I created a website using HTML, CSS and Bootstrap. The website can be viewed here:",
+      tag: ["projects"],
+      link: "http://www.wirsindbiene.eu/index.html",
+      linkName: "Wir sind Biene!",
     },
     {
       headline: "Barnes-Hut Algorithm",
       content:
         "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the Barnes-Hut Algorithm",
       tag: ["coding"],
+    },
+    {
+      headline: "Sorting Algorithms (+Visualizer)",
+      content:
+        "In algorithmics I learned about the simple and the more complex (but therefore faster) sorting algorithms. I decided to create a visualizer, that can be viewed here: ",
+      link: "https://github.com/ZwickPhilippe/Sorting-Visualizer",
+      linkName: "Sorting-Visualizer",
+      tag: ["algorithms"],
+    },
+    {
+      headline: "Wir sind Biene Website",
+      content:
+        "For the 'Wir sind Biene' (='We are bees') bee-project in my high school, I created a website using HTML, CSS and Bootstrap. The website can be viewed here:",
+      tag: ["projects"],
+      link: "http://www.wirsindbiene.eu/index.html",
+      linkName: "Wir sind Biene!",
     },
   ];
 
-  const [selectedTags, setSelectedTags] = useState(["algorithms", "coding"]);
+  const [selectedTags, setSelectedTags] = useState([
+    "algorithms",
+    "coding",
+    "projects",
+    "work",
+  ]);
   let left = false;
 
   const toggleTag = (currentTag) => {

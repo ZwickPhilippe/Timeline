@@ -94,6 +94,18 @@
   padding-left: 1%;
   padding-bottom: 0.2%;
   display: block;
+  opacity: 0;
+  transform: translateY(2vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.6s ease-out;
+  will-change: opacity, visibility;
+  z-index: 3;
+}
+
+.timelineContainer.visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
 }
 
 .timelineContainer::after {
