@@ -11,10 +11,18 @@ import { IconButton, Tooltip } from "@material-ui/core";
 function Timeline() {
   const timeEntries = [
     {
+      headline: "Dynamic Programming",
+      content:
+        "Dynamic Programming uses different techniques to avoid recalculation and time consuming recursion in order to save different problems. I created a repository that includes different dynamic programming problems, starting from easier problems like the 'Fibonacci series' to more different problems like the Knapsack or (Constraint) Longest Common Subsequence Problem.",
+      tag: ["algorithms"],
+    },
+    {
       headline: "Barnes-Hut Algorithm",
       content:
-        "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the Barnes-Hut Algorithm",
+        "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the",
       tag: ["coding"],
+      link: "https://github.com/ZwickPhilippe/Barnes-Hut-Algorithm-Octree-",
+      linkName: "Barnes-Hut-Algorithm",
     },
     {
       headline: "Sorting Algorithms (+Visualizer)",
@@ -24,56 +32,13 @@ function Timeline() {
       linkName: "Sorting-Visualizer",
       tag: ["algorithms"],
     },
+
     {
-      headline: "Wir sind Biene Website",
+      headline: "Greedy Algorithms (+Visualizer)",
       content:
-        "For the 'Wir sind Biene' (='We are bees') bee-project in my high school, I created a website using HTML, CSS and Bootstrap. The website can be viewed here:",
-      tag: ["projects"],
-      link: "http://www.wirsindbiene.eu/index.html",
-      linkName: "Wir sind Biene!",
-    },
-    {
-      headline: "Barnes-Hut Algorithm",
-      content:
-        "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the Barnes-Hut Algorithm",
-      tag: ["coding"],
-    },
-    {
-      headline: "Sorting Algorithms (+Visualizer)",
-      content:
-        "In algorithmics I learned about the simple and the more complex (but therefore faster) sorting algorithms. I decided to create a visualizer, that can be viewed here: ",
-      link: "https://github.com/ZwickPhilippe/Sorting-Visualizer",
-      linkName: "Sorting-Visualizer",
-      tag: ["algorithms"],
-    },
-    {
-      headline: "Wir sind Biene Website",
-      content:
-        "For the 'Wir sind Biene' (='We are bees') bee-project in my high school, I created a website using HTML, CSS and Bootstrap. The website can be viewed here:",
-      tag: ["projects"],
-      link: "http://www.wirsindbiene.eu/index.html",
-      linkName: "Wir sind Biene!",
-    },
-    {
-      headline: "Wir sind Biene Website",
-      content:
-        "For the 'Wir sind Biene' (='We are bees') bee-project in my high school, I created a website using HTML, CSS and Bootstrap. The website can be viewed here:",
-      tag: ["projects"],
-      link: "http://www.wirsindbiene.eu/index.html",
-      linkName: "Wir sind Biene!",
-    },
-    {
-      headline: "Barnes-Hut Algorithm",
-      content:
-        "In programming we needed to create a simulation that should be able to represent planets and the forces they apply on each other. This was done using an Octree and the Barnes-Hut Algorithm",
-      tag: ["coding"],
-    },
-    {
-      headline: "Sorting Algorithms (+Visualizer)",
-      content:
-        "In algorithmics I learned about the simple and the more complex (but therefore faster) sorting algorithms. I decided to create a visualizer, that can be viewed here: ",
-      link: "https://github.com/ZwickPhilippe/Sorting-Visualizer",
-      linkName: "Sorting-Visualizer",
+        "In algorithmics different 'Greedy'- algorithms were covered. Greedy-algorithms do not always return a correct solution for every 'Greedy'-problem and often depend on the way the data is delivered to them. To show that I created an Interval/Job scheduling Visualizer, that is able to return a correct solution, if the jobs are sorted correctly:",
+      link: "https://github.com/ZwickPhilippe/Interval-Scheduling-Greedy-Visualizer",
+      linkName: "Interval-Scheduling Visualizer",
       tag: ["algorithms"],
     },
     {
@@ -95,6 +60,8 @@ function Timeline() {
   let left = false;
 
   const toggleTag = (currentTag) => {
+    console.log(currentTag);
+
     if (selectedTags.includes(currentTag)) {
       let copy = selectedTags.filter((element) => {
         return element != currentTag;

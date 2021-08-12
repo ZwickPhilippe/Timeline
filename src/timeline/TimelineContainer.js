@@ -41,7 +41,10 @@ function TimelineContainer(props) {
             }
           >
             <Tooltip title="Algorithm">
-              <IconButton color="inherit" onClick={() => printProp}>
+              <IconButton
+                color="inherit"
+                onClick={() => props.toggleTag("algorithms")}
+              >
                 <AccountTreeIcon />
               </IconButton>
             </Tooltip>
