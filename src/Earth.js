@@ -54,16 +54,6 @@ export function Earth(props) {
           enablePan={true}
           enableRotate={true}
           zoomSpeed={0.5}
-          remove
-          positions
-          from
-          mesh
-          in
-          order
-          to
-          keep
-          it
-          moving
           panSpeed={0.1}
           rotateSpeed={10}
         />
