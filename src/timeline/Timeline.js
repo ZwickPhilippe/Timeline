@@ -34,7 +34,6 @@ function Timeline() {
       linkName: "Sorting-Visualizer",
       tag: ["algorithms"],
     },
-
     {
       headline: "Greedy Algorithms (+Visualizer)",
       content:
@@ -43,6 +42,14 @@ function Timeline() {
       linkName: "Interval-Scheduling Visualizer",
       tag: ["algorithms"],
     },
+    // {
+    //   headline: "Graph Algorithms",
+    //   content:
+    //     "As graphs play a major role in our daily life there are several graph algorithms that cover different problems. Breadth/Depth-First Search, Directed Acyclic Graph, Dijkstra are some famous ones ",
+    //   link: "https://github.com/ZwickPhilippe/Graph-Algorithms",
+    //   linkName: "Graph Algorithm Collection",
+    //   tag: ["algorithms"],
+    // },
     {
       headline: "Wir sind Biene Website",
       content:
