@@ -15,6 +15,8 @@ function Timeline() {
       content:
         "Dynamic Programming uses different techniques to avoid recalculation and time consuming recursion in order to save different problems. I created a repository that includes different dynamic programming problems, starting from easier problems like the 'Fibonacci series' to more different problems like the Knapsack or (Constraint) Longest Common Subsequence Problem.",
       tag: ["algorithms"],
+      link: "https://github.com/ZwickPhilippe/Dynamic-Programming",
+      linkName: "Dynamic Programming Algorithms",
     },
     {
       headline: "Barnes-Hut Algorithm",
@@ -76,7 +78,7 @@ function Timeline() {
   return (
     <React.Fragment>
       <div className="tagLegend">
-        <h2>Tags: </h2>
+        <h2 style={{ marginTop: "10%" }}>Tags: </h2>
         <Tooltip title="Algorithm">
           <IconButton
             style={

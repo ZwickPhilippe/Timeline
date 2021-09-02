@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../App.css";
-import { IconButton, Tooltip } from "@material-ui/core";
+import { Button, Divider, IconButton, Tooltip } from "@material-ui/core";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LanguageIcon from "@material-ui/icons/Language";
 import CodeIcon from "@material-ui/icons/Code";
 import DeveloperBoardIcon from "@material-ui/icons/DeveloperBoard";
 import WorkIcon from "@material-ui/icons/Work";
@@ -100,15 +102,17 @@ function TimelineContainer(props) {
         </div>
         <p style={{ marginTop: "-1%" }}>
           {props.content}{" "}
-          <a href={props.link} style={{ textDecoration: "none" }}>
+          {/* <a href={props.link} style={{ textDecoration: "none" }}>
             {props.linkName}
-          </a>{" "}
+          </a>{" "} */}
         </p>
+        <Divider></Divider>
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "flex-end",
+            marginBottom: "0%",
           }}
         >
           {/* <img
@@ -116,6 +120,20 @@ function TimelineContainer(props) {
             alt="beelogo"
             style={{ width: "34%", borderRadius: "3%" }}
           /> */}
+          {/* <Button color="primary" variant="contained">
+            {props.linkName}
+          </Button> */}
+          <p>{props.linkName}:</p>
+
+          {props.link.includes("github.com") ? (
+            <IconButton color="inherit" size="medium" href={props.link}>
+              <GitHubIcon />
+            </IconButton>
+          ) : (
+            <IconButton color="inherit" size="medium" href={props.link}>
+              <LanguageIcon />
+            </IconButton>
+          )}
         </div>
       </div>
     </React.Fragment>
